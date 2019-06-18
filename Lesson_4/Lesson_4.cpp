@@ -8,22 +8,25 @@
 using namespace std;
 int main()
 {
-	int input_data = 0;
-	vector<int> my_dynarray(2);
-	my_dynarray[0] = 1;
-	my_dynarray[1] = 1;
+	string greetstring("Hello std::string !");
+	cout << greetstring << endl;
 
-	cout << "Please enter a new number : " << endl;
-	cin >> input_data;
+	cout << "Enter a line of text: " << endl;
+	string firstline;
+	getline(cin, firstline);
 
-	do
-	{
-		my_dynarray.push_back(input_data);
-		cout << "Current array size is : " << my_dynarray.size() << endl;
-		cout << "Please enter a new number : " << endl;
-		cin >> input_data;
+	cout << "Enter a line of text: " << endl;
+	string secondline;
+	getline(cin, secondline);
 
-	} while (input_data != -1);
+	cout << firstline + " " + secondline << endl;
+
+	string acopy;
+	acopy = firstline;
+
+	cout << "copy string is :" << acopy<<endl;
+
+
 
 
 }
