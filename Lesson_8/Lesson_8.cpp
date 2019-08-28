@@ -60,7 +60,7 @@ void dynamicMemoryBasics(void)
 	if (pointToMany == NULL)
 	{
 		cout << "Failed allocation"<<endl;
-		delete pointToMany;
+		delete []pointToMany;
 	}
 	else
 	{
