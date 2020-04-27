@@ -14,6 +14,8 @@ private:
 	string name;
 	int age;
 	string gender;
+	friend void DisplayAge(const Human& person);
+
 
 public:
 	//constructor
@@ -50,14 +52,20 @@ public:
 	{
 		name = humanName;
 	}
+
+	void DisplayAge(const Human& person)
+	{
+		cout << person.age << endl;
+	}
 };
 
 Human::~Human()
 {
-
+	cout << "\nclass is deleted ... ! " << endl;
 }
 
-Human::Human(string name, int age, string gender = "")
+Human::
+Human(string name, int age, string gender = "")
 {
 	this->name = name;
 	this->age = age;
@@ -111,6 +119,31 @@ public:
 	}
 };
 
+
+/*struct Human*/
+
+struct Human_str
+{
+
+	Human_str(string humansName, int humansAge, bool humanGender) 
+	{
+		this->name= humansName;
+		this->Age = humansAge ;
+		this->Gender = humanGender;
+	}
+	int getAge()
+	{
+		return Age;
+	}
+private:
+	string name;
+	int Age;
+	bool Gender;
+
+};
+
+
+
 int main()
 {
 	/*Example 1 :
@@ -134,6 +167,11 @@ int main()
 
 	cout << "String buffer in sayHello variable is " << sayHello.GetLength()<<endl;
 	cout << "and buffer contains:::: " << sayHello.GetString() <<":::::"<< endl;
+
+
+	/* Example 3: */
+
+	DisplayAge(firstman);
 
 }
 
